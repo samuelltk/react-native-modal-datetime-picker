@@ -168,7 +168,7 @@ export default class CustomDatePickerIOS extends React.PureComponent {
       >
         <View style={[styles.datepickerContainer, datePickerContainerStyleIOS]}>
           <View style={{flexDirection:'row',justifyContent:'space-between',
-            backgroundColor:'#f0f1f2',height:44,}}>
+            backgroundColor:'#e6e6e6',height:44,}}>
             <TouchableHighlight
               style={styles.cancelButton}
               underlayColor='#ebebeb'
