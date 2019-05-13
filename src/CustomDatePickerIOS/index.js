@@ -118,7 +118,7 @@ export default class CustomDatePickerIOS extends React.PureComponent {
     } = this.props;
 
     const titleContainer = (
-      <View style={styles.titleContainer}>
+      <View style={{justifyContent:'center'}}>
         <Text style={[styles.title, titleStyle]}>{titleIOS}</Text>
       </View>
     );
@@ -168,7 +168,7 @@ export default class CustomDatePickerIOS extends React.PureComponent {
       >
         <View style={[styles.datepickerContainer, datePickerContainerStyleIOS]}>
           <View style={{flexDirection:'row',justifyContent:'space-between',
-          backgroundColor:'#f0f1f2'}}>
+            backgroundColor:'#f0f1f2',height:44,}}>
             <TouchableHighlight
               style={styles.cancelButton}
               underlayColor='#ebebeb'
@@ -176,6 +176,7 @@ export default class CustomDatePickerIOS extends React.PureComponent {
             >
               {customCancelButtonIOS || cancelButton}
             </TouchableHighlight>
+            {titleContainer}
             <TouchableHighlight
               style={styles.confirmButton}
               underlayColor='#ebebeb'
