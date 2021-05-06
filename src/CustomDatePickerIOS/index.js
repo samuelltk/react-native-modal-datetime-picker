@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { DatePickerIOS, Text, TouchableHighlight, View } from "react-native";
+import { DatePickerIOS, Text, TouchableHighlight, View, Platform } from "react-native";
 import ReactNativeModal from "react-native-modal";
+import DateTimePicker from "@react-native-community/datetimepicker";
 
 import styles from "./index.style";
 
@@ -186,12 +187,18 @@ export default class CustomDatePickerIOS extends React.PureComponent {
               {confirmButton}
             </TouchableHighlight>
           </View>
-          <View onStartShouldSetResponderCapture={this._handleUserTouchInit}>
+          <View style={{paddingHorizontal:15,
+          }}
+            onStartShouldSetResponderCapture={this._handleUserTouchInit}>
             <DatePickerComponent
+              style={{paddingHorizontal:15,
+              }}
               date={this.state.date}
               mode={mode}
               onDateChange={this._handleDateChange}
               minuteInterval={this.state.minuteInterval}
+              isDarkModeEnabled={true}
+              display={Platform.OS === "ios" ? "spinner" : "default"}
               {...otherProps}
             />
           </View>
